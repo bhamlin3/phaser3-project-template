@@ -14,12 +14,14 @@ module.exports = {
     },
 
     module: {
-        rules: [
-          {
-            test: [ /\.vert$/, /\.frag$/ ],
+        rules: [{
+            loader: 'babel-loader',
+            test: /\.js$/,
+            exclude: /node_modules/
+        }, {
+            test: [/\.vert$/, /\.frag$/],
             use: 'raw-loader'
-          }
-        ]
+        }]
     },
 
     plugins: [
